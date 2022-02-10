@@ -1,0 +1,13 @@
+.full-page{
+    position:absolute;
+    top: 0px;
+    left:0px;
+    width: 100%;
+}
+
+.full_page{
+    position: relative;
+    max-width: 1920px;
+    height: 20px;
+    margin: 0 auto;
+}
