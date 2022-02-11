@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const path = require("path")
 const registerRoute = require("./routes/registerRoute.js")
+const loginRoute = require("./routes/loginRoute.js")
 const {Pool,Client} = require("pg")
 const sqlCreateRoute = require("./routes/sqlCreateRoute.js")
 
@@ -25,15 +26,21 @@ app.use(express.static("./public"))
 //connecting routes
 app.use("/register", registerRoute);
 app.use("/sqlcreate" , sqlCreateRoute);
+app.use("/login" , loginRoute);
 
 app.set("view engine", "ejs")
 
 app.get("/", (req,res)=>{
-    res.render("Register")
+    res.render("Register" , information = {})
 });
 
 app.get("/sqlcreate" , (req,res)=>{
     res.render("sqlCreate")
 })
+
+app.get("/login_page" , (req,res)=>{
+    res.render("login" , information = {})
+})
+
 
 app.listen(3000)
