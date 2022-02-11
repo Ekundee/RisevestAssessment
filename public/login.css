@@ -246,3 +246,14 @@ form {
         transform: translateY(150px);
     }
 }
+
+
+@media (max-width: 880px) {
+    .right-main{
+        display: none;
+    }
+    form{
+        width: 100%;
+        padding: 100px;
+    }
+}

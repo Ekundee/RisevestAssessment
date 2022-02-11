@@ -5,7 +5,10 @@ const registerRoute = require("./routes/registerRoute.js")
 const loginRoute = require("./routes/loginRoute.js")
 const {Pool,Client} = require("pg")
 const sqlCreateRoute = require("./routes/sqlCreateRoute.js")
+const dotenv = require("dotenv")
+const jwt = require("jsonwebtoken")
 
+dotenv.config()
 // connecting to postgres database
 var pool = new Pool({
     user : "postgres",
