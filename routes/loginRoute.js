@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express")
 const bodyParser = require("body-parser")
 const {Pool, Client} = require("pg");
@@ -28,10 +29,15 @@ router.post('/', urlencode, (req,res)=>{
             if(ress.rowCount != 0){
                 dbpass = (ress.rows[0])["password"];
                 if(password_f == dbpass){
-                    res.render("login" , information =  {"info" : "Logged in and token saved", })
+                    res.render("login" , information =  {"info" : "Logged in and token saved", "color" : "green"})
 
-                    const email_token = jwt.sign(email, process.env.TOKEN_SECRET, { expiresIn: '600s' });
-
+                    //const email_token = jwt.sign(email, process.env.EMAIL, { expiresIn: '1800s' });
+                    var email_token = jwt.sign(
+                        {id: 1}, 
+                        email,
+                        {expiresIn: '600s'}
+                    )
+                    //printing out the token 
                     console.log(email_token)
                 }else{
                     res.render("login" , information =  {"info" : "invalid password"})

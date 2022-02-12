@@ -16,6 +16,68 @@
     margin: 0 auto;
 }
 
+
+
+
+
+
+.responsiveHeader{
+    height: 170px;
+    display: none;   
+}
+
+.responsiveHeaderHead img{
+    color: #0998A0;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+.responsiveHeaderHead img:hover .full-page{
+    height: 0px;
+    transition: all 3s 3s ease-in;
+}
+.responsiveHeader .links{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.responsiveHeader .links .app{
+   color: #0998A0;
+   font-weight: bolder;
+}
+.responsiveHeader .links ul{
+    list-style : none;
+    width: 100%;
+}
+
+.responsiveHeader .links ul a{
+    color: #0998A0;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.responsiveHeader .links ul li{
+    margin: 20px;
+    border-bottom: solid 0.2px grey ;
+    width: 100%;
+}
+
+.responsiveHeaderFooter{
+    width: 100%;
+    text-align: center;
+    color: grey;
+}
+.responsiveHeaderFooter img{
+    width: 110px;
+}
+
+#menu{
+        display: none;
+}
+
+
+
 .header{
     position: relative;
     top:0;
@@ -249,11 +311,32 @@ form {
 
 
 @media (max-width: 880px) {
-    .right-main{
+   .right-main{
         display: none;
     }
     form{
         width: 100%;
         padding: 100px;
+    }
+    #normLink{
+        display: none;
+    }
+
+    .header{
+        position: fixed;
+    }
+
+    .responsiveHeader{
+        margin-top: 80px;
+    }
+
+    .company-details{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+     #menu{
+        padding: 30px;
+        display: flex;
     }
 }

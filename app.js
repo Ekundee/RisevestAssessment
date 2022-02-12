@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express")
 const app = express()
 const path = require("path")
@@ -8,7 +9,6 @@ const sqlCreateRoute = require("./routes/sqlCreateRoute.js")
 const dotenv = require("dotenv")
 const jwt = require("jsonwebtoken")
 
-dotenv.config()
 // connecting to postgres database
 var pool = new Pool({
     user : "postgres",

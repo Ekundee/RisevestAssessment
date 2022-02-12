@@ -10,21 +10,39 @@
 <body>
     <div class="full-page">
         <div class="full_page">
-            <!-- header -->
-            <header class="header">
-                <div class="company-details">
-                    <img src="risevestIcon.png" alt="" srcset="">
-                </div>
-                <div class="links">
-                    <ul>
+
+            <div class="responsiveHeader" id="responsiveHeader">
+                <div class="links" id = "reslink">
+                     <ul>
                         <a href=""><li class="app">Home</li></a>
                         <a href="#"><li>Products</li></a>
-                        <a href="#"><li>Investment&nbsp;Club</li></a>
+                        <a href="#"><li style="display: flex; flex-direction: row;">Investment&nbsp;Club<img src="down.png" alt="" srcset="" width="25px"></li></a>
                         <a href="#"><li>About&nbsp;Us</li></a>
                         <a href="#"><li>FAQs</li></a>
                         <a href="#"><li>Blogs</li></a>
                     </ul>
+                </div>               
+            </div>
+
+
+            <!-- header -->
+            <header class="header">
+                <div class="company-details">
+                    <img src="risevestIcon.png" alt="" srcset="">
+                    <img class="menu" id="menu" src="menu.png" alt="" srcset="" width="80px" onclick="dropdown()">
                 </div>
+                <div class="links" id="normLink">
+                    <ul>
+                        <a href=""><li class="app">Home</li></a>
+                        <a href="#"><li>Products</li></a>
+                        <a href="#"><li style="display: flex; flex-direction: row;">Investment&nbsp;Club<img src="down.png" alt="" srcset="" width="25px"></li></a>
+                        <a href="#"><li>About&nbsp;Us</li></a>
+                        <a href="#"><li>FAQs</li></a>
+                        <a href="#"><li>Blogs</li></a>
+                        
+                    </ul>
+                </div>
+                           
             </header>
 
             <!-- main -->
@@ -94,12 +112,27 @@
     <div class="design3"></div>
 
     <script>
+        isShowing = false;
+
         if("<%=information.time%>" != ""){
             document.getElementById("error").style.color = "green"
 
             setTimeout(() => {
                 window.location.replace("/login_page")
             },parseInt("<%=information.time%>"));
+        }
+
+        var dropdown= () =>{
+            
+            if(isShowing == false){
+                document.getElementById("menu").src = "close.png"
+                document.getElementById("responsiveHeader").style.display = "flex"
+                isShowing =true
+            }else{
+                isShowing = false
+                document.getElementById("menu").src = "menu.png"
+                document.getElementById("responsiveHeader").style.display = "none"
+            }
         }
 
         
