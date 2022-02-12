@@ -9,10 +9,14 @@
     "pg": "^8.7.3",
     "yarn": "^1.22.17"
   },
+  
   "name": "RisevestAssessment",
   "version": "1.0.0",
   "main": "app.js",
   "repository": "https://github.com/Ekundee/RisevestAssessment.git",
   "author": "ekundee <isaiahekundayo17@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  }
 }
